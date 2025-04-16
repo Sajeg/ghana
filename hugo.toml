@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+languageCode = 'de-de'
+title = 'Charlotte und Johann in Ghana'
 
 [markup]
   # (Optional) To be able to use all Prism plugins, the theme enables unsafe
