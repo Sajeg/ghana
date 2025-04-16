@@ -45,8 +45,8 @@ jobs:
           commit_author:
             renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
 
-  publish:
-    name: Publish Hugo Site
+  build:
+    name: Build Hugo Site
     needs: update_hugo_npm_dependencies
     runs-on: ubuntu-latest
     permissions:
