@@ -9,6 +9,7 @@
       "div",
       "footer",
       "h1",
+      "h2",
       "head",
       "header",
       "hr",
@@ -24,6 +25,7 @@
       "p",
       "path",
       "script",
+      "span",
       "style",
       "svg",
       "title",
@@ -41,16 +43,12 @@
       "icon-tabler-moon",
       "icon-tabler-sun",
       "icons-tabler-outline",
-      "jr-basics__email",
       "jr-basics__image",
       "jr-basics__item",
       "jr-basics__label",
-      "jr-basics__location-city",
       "jr-basics__name",
-      "jr-basics__phone",
       "jr-basics__profile",
       "jr-basics__profile--col",
-      "jr-basics__profile--row",
       "jr-basics__profile-icon",
       "jr-basics__profile-item",
       "jr-basics__profile-username",
@@ -69,6 +67,10 @@
       "pagination",
       "post",
       "post-content",
+      "post-header",
+      "post-heading__anchor",
+      "post-meta",
+      "post-meta__author",
       "search",
       "search__suggestions--hidden",
       "sidebar",
@@ -79,7 +81,8 @@
       "prism-dark",
       "prism-light",
       "search__suggestions",
-      "search__text"
+      "search__text",
+      "zwei-ghana-erlebnisse"
     ]
   }
 }

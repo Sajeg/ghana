@@ -1,0 +1,1 @@
+zwei Menschen in Ghana

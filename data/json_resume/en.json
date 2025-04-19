@@ -1,0 +1,30 @@
+{
+    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+    "basics": {
+      "name": "Charlotte und Johann",
+      "label": "Zwei Freiwillige in Ghana",
+      "image": "/profile.jpg",
+      "summary": "Von Anfang September 2025 bis Ende 2026 gehen wir mit Aktion Lichtblicke als Freiwillige nach Ghana. Dort arbeiten wir mit dem Rays of Hope Center in Ayikuma und Ashaiman mit Kindern und Jugendlichen aus prekären Lebenssituationen. Das Rays of Hope Center bietet den Kindern eine Möglichkeit zur sozialen Reintegration und Bildungschancen.",
+      "location": {
+        "city": ""
+      },
+      "profiles": [
+        {
+          "network": "instagram",
+          "username": "AktionLichtblicke",
+          "url": "https://www.aktion-lichtblicke.de"
+        },
+        {
+          "network": "GitHub",
+          "username": "RaysofhopeCenter",
+          "url": "https://www.rohc-ghana.org"
+        }
+      ]
+    },
+    "meta": {
+      "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+      "version": "v1.0.0",
+      "lastModified": "2025-04-19T15:19:00"
+    }
+  }
+  
