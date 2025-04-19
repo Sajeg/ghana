@@ -9,6 +9,7 @@
       "div",
       "footer",
       "h1",
+      "h2",
       "head",
       "header",
       "hr",
@@ -65,6 +66,9 @@
       "pagination",
       "post",
       "post-content",
+      "post-header",
+      "post-heading__anchor",
+      "post-meta",
       "search",
       "search__suggestions--hidden",
       "sidebar",
@@ -75,7 +79,8 @@
       "prism-dark",
       "prism-light",
       "search__suggestions",
-      "search__text"
+      "search__text",
+      "zwei-ghana-erlebnisse"
     ]
   }
 }
