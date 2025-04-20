@@ -1,5 +1,6 @@
 baseURL = 'https://www.sajeg.org/'
-languageCode = 'de-de'
+languageCode = 'de-DE'
+defaultContentLanguage = "de"
 copyright = "Copyright © 2025 by Charlotte and Johann"
 title = "Ghana Blog"
 
@@ -103,6 +104,15 @@ title = "Ghana Blog"
     name = "About"
     url = "/about"
     weight = 30
+
+[languages]
+  [languages.de]
+    disabled = false
+    languageCode = 'de-DE'
+    languageDirection = ''
+    languageName = 'german'
+    title = ''
+    weight = 0
 
 
 [markup]
