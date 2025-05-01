@@ -11,11 +11,16 @@
       "profiles": [
         {
           "network": "instagram",
+          "username": "Ghanastisch",
+          "url": "https://www.instagram.com/ghanastisch/"
+        },
+        {
+          "network": "framework",
           "username": "AktionLichtblicke",
           "url": "https://www.aktion-lichtblicke.de"
         },
         {
-          "network": "GitHub",
+          "network": "framework",
           "username": "RaysofhopeCenter",
           "url": "https://www.rohc-ghana.org"
         }
