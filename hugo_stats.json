@@ -5,7 +5,6 @@
       "article",
       "aside",
       "body",
-      "br",
       "button",
       "div",
       "footer",
@@ -27,6 +26,7 @@
       "path",
       "script",
       "span",
+      "strong",
       "style",
       "svg",
       "title",
@@ -84,8 +84,7 @@
       "prism-dark",
       "prism-light",
       "search__suggestions",
-      "search__text",
-      "zwei-ghana-erlebnisse"
+      "search__text"
     ]
   }
 }
