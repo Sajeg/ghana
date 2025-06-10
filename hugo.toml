@@ -4,6 +4,9 @@ defaultContentLanguage = "de"
 copyright = "Copyright © 2025 by Charlotte and Johann"
 title = "Ghana Blog"
 
+[imaging]
+  quality = 75
+
 [params]
   # dark or light, defaults to light. Local storage and OS preference override this param. For more details see: 
   # https://github.com/schnerring/hugo-theme-gruvbox/issues/34#issuecomment-1235870375
@@ -16,8 +19,13 @@ title = "Ghana Blog"
   subtitle = "Zwei Freiwillige in Ghana"
   description = "A retro-looking Hugo theme inspired by gruvbox. The pastel colors are high contrast, easily distinguishable, pleasing to the eye, and feature light and dark color palettes."
 
+  [params.imageResize]
+    min = 300
+    max = 700
+    increment = 100
+
   [params.logo]
-    text = "gruvbox"
+    text = "ghanastisch"
     url = "/"
 
   
