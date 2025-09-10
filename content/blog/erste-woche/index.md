@@ -14,7 +14,7 @@ KFC (sieht genauso aus wie in Deutschland) haben wir uns gemeinsam mit Sister Po
 Weg nach Ayikuma, zu unserem neuen Zuhause gemacht. Dort angekommen sind wir dann relativ
 schnell müde in Bett gefallen.
 
-![Ein Flugzeug am Flughafen](plane.jpg "Das Flugzeug nach der Landung in Accra") 
+![Das Flugzeug kurz vor der Landung](plane.jpg "Während des Fluges konnten wir sehen wann wir da sind") 
 ![Ein Schild vom rays of Hope Center](rohc.jpg "Das Rays of Hope Center ist unser zuhause für das nächste Jahr")
 
 Nach einer erholsamen Nacht mussten wir dann am Morgen leider feststellt, dass der Wasser
