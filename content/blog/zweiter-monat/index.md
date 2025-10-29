@@ -1,8 +1,7 @@
 ---
 title: Rückblick des zweiten Monats
 author: Charlotte
-draft: true
-summary: In dem ersten Monat konnten wir nicht nur einen guten einblick ins Projekt gewinnen, sondern auch den anderen Standort besuchen und haben angefangen zu Unterrichten.
+draft: false
 date: 2025-10-28
 ---
 
