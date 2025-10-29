@@ -2,7 +2,8 @@
 title: Rückblick des zweiten Monats
 author: Charlotte
 draft: false
-date: 2025-10-28
+summary: Wer hätte es gedacht?! Auch im 2. Monat hier in Ghana ist mal wieder Mega viel passiert. Langsam aber sicher haben wir einen richtigen Alltag und einige Routinen - wie das Bananenbrot backen jeden Dienstag - entwickelt.
+date: 2025-10-29
 ---
 
 Wer hätte es gedacht?! Auch im 2. Monat hier in Ghana ist mal wieder Mega viel passiert. Langsam aber sicher haben wir einen richtigen Alltag und einige Routinen - wie das Bananenbrot backen jeden Dienstag - entwickelt.
