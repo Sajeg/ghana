@@ -30,7 +30,7 @@ jobs:
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.146.4"
+          hugo-version: "0.133.0"
           extended: true
 
       - name: Write composite package.json
@@ -77,9 +77,6 @@ jobs:
 
       - name: Install npm Packages
         run: npm ci
-
-      - name: Run mod vendor
-        run: hugo mod vendor
       
       - name: Build Hugo Site
         env:
@@ -87,7 +84,6 @@ jobs:
           HUGO_ENVIRONMENT: production
           TZ: America/Los_Angeles
         run: |
-          hugo mod vendor
           hugo \
             --gc \
             --minify
