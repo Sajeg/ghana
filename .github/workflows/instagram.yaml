@@ -45,7 +45,7 @@ jobs:
                   const trimName = name[name.length - 1].split('?')[0].replace(/\\s+/g, '')
                   console.log('Story: ' + trimName);
                   console.log('DEBUG_URL_RAW:', JSON.stringify(url));
-                  await exec.exec('curl', [`-o "content/instagram/${trimName}"`, `"${url}"`])
+                  await exec.exec('curl', ['-f','-L','-g','-o',`content/instagram/${trimName}`, url])
                 }
             }
       - uses: stefanzweifel/git-auto-commit-action@v4
