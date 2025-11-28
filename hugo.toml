@@ -8,7 +8,7 @@ title = "Ghana Blog"
   quality = 75
 
 [params]
-  # dark or light, defaults to light. Local storage and OS preference override this param. For more details see: 
+  # dark or light, defaults to light. Local storage and OS preference override this param. For more details see:
   # https://github.com/schnerring/hugo-theme-gruvbox/issues/34#issuecomment-1235870375
   defaultTheme = "light"
   # gray red green yellow blue purple aqua orange, defaults to blue
@@ -28,14 +28,14 @@ title = "Ghana Blog"
     text = "ghanastisch"
     url = "/"
 
-  
+
   # By default, the theme creates resized versions of images ranging from 300 to
   # 700 pixels wide in increments of 200 pixels
   #[params.imageResize]
   #  min = 300
   #  max = 700
   #  increment = 200
-  
+
   [params.tagCloud]
     enable = false
     minFontSizeRem = 0.8

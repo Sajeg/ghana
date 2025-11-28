@@ -35,17 +35,22 @@ jobs:
             }
 
             async function getStory(id) {
-                const story_url = `https://graph.instagram.com/${id}?fields=media_url&access_token=${{ secrets.IG_TOKEN }}`
+                const story_url = `https://graph.instagram.com/${id}?fields=media_url,timestamp&access_token=${{secrets.IG_TOKEN}}`
                 const response = await fetch(story_url);
                 const data = await response.json();
 
                 if (data.hasOwnProperty('media_url')) {
-                  const url = await data['media_url'].trim();
-                  var name = url.split('/')
-                  const trimName = name[name.length - 1].split('?')[0].replace(/\\s+/g, '')
-                  console.log('Story: ' + trimName);
-                  console.log('DEBUG_URL_RAW:', JSON.stringify(url));
-                  await exec.exec('curl', ['-f','-L','-g','-o',`content/instagram/${trimName}`, url])
+                    const url = await data['media_url'].trim();
+                    const time = await data['timestamp']
+                    var name = url.split('/')
+                    const trimName = name[name.length - 1].split('?')[0].replace(/\\s+/g, '')
+                    console.log('Story: ' + trimName);
+                    await exec.exec('curl', ['-f', '-L', '-g', '-o', `content/instagram/${trimName}`, url])
+                    if (trimName.endsWith(".webp")) {
+                        await exec.exec('echo', [`"{{< display_time \"${time}\" >}} \n ![](${trimName} \"\")"`, '>>', 'content/instagram/index.md'])
+                    } else {
+                        await exec.exec('echo', [`{{< display_time  \"${time}\" >}} \n {{< video src=\"${trimName.substring(0, trimName.length - 4)}\" autoplay="false" controls="true" loop="true" >}}`])
+                    }
                 }
             }
       - uses: stefanzweifel/git-auto-commit-action@v7

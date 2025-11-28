@@ -13,6 +13,8 @@
       "footer",
       "h1",
       "h2",
+      "h4",
+      "h6",
       "head",
       "header",
       "hr",
@@ -35,7 +37,8 @@
       "style",
       "svg",
       "title",
-      "ul"
+      "ul",
+      "video"
     ],
     "classes": [
       "bio",
@@ -85,6 +88,12 @@
     ],
     "ids": [
       "ghanastisch---der-blog-von-charlotte-und-johann",
+      "hahahugoshortcode14s0hbhb",
+      "hahahugoshortcode15s0hbhb",
+      "hahahugoshortcode16s0hbhb",
+      "hahahugoshortcode17s0hbhb",
+      "hahahugoshortcode8s0hbhb",
+      "hahahugoshortcode8s1hbhb",
       "menu",
       "prism-dark",
       "prism-light",
