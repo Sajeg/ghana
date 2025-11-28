@@ -40,7 +40,7 @@ jobs:
                 const data = await response.json();
 
                 if (data.hasOwnProperty('media_url')) {
-                  const url = await data['media_url'];
+                  const url = await data['media_url'].replace(/\\s+/g, '');;
                   var name = url.split('/')
                   const trimName = name[name.length - 1].split('?')[0].replace(/\\s+/g, '')
                   console.log('Story: ' + trimName)
