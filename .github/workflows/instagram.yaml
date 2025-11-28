@@ -42,10 +42,9 @@ jobs:
                 if (data.hasOwnProperty('media_url')) {
                   const url = await data['media_url'];
                   var name = url.split('/')
-                  name = name[name.length - 1].split('?')[0]
-                  const trimName = name.replace(/\\s+/g, '')
+                  const trimName = name[name.length - 1].split('?')[0].replace(/\\s+/g, '')
                   console.log('Story: ' + trimName)
-                  await exec.exec('wget', [`-P /content/instagram${trimName}`, url])
+                  await exec.exec('wget', [`-P content/instagram/${trimName}`, url])
                 }
             }
       - uses: stefanzweifel/git-auto-commit-action@v4
