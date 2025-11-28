@@ -47,9 +47,9 @@ jobs:
                     console.log('Story: ' + trimName);
                     await exec.exec('curl', ['-f', '-L', '-g', '-o', `content/instagram/${trimName}`, url])
                     if (trimName.endsWith(".webp")) {
-                      await exec.exec('echo', [`"{{< display_time \"${time}\" >}} \n ![](${trimName} \"\")"`, '>>', 'content/instagram/index.md'])
+                      await exec.exec('echo', [`"{{< display_time \"${time}\" >}} ![](${trimName} \"\")"`, '>>', 'content/instagram/index.md'])
                     } else {
-                      await exec.exec('echo', [`"{{< display_time  \"${time}\" >}} \n {{< video src=\"${trimName.substring(0, trimName.length - 4)}\" autoplay="false" controls="true" loop="true" >}}"`, '>>', 'content/instagram/index.md'])
+                      await exec.exec('echo', [`"{{< display_time  \"${time}\" >}} {{< video src=\"${trimName.substring(0, trimName.length - 4)}\" autoplay="false" controls="true" loop="true" >}}"`, '>>', 'content/instagram/index.md'])
                     }
                 }
             }
