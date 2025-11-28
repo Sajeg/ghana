@@ -44,7 +44,7 @@ jobs:
                     var name = url.split('/')
                     name = name[name.length - 1].split('?')[0]
                     console.log('Story: ' + name)
-                    await exec.exec('wget', [`-P /content/instagram/${name}`, url])
+                    await exec.exec('wget', [`-O content/instagram/${name}`, url])
                 }
             }
       - uses: stefanzweifel/git-auto-commit-action@v4
