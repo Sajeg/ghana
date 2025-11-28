@@ -4,12 +4,13 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 */12 * * *"
-      
     
 jobs:
   check_for_stories:
     name: Check for stories
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -42,7 +43,7 @@ jobs:
                 if (data.hasOwnProperty('media_url')) {
                     const url = await data['media_url'];
                     console.log(`[${id}] ${url}`);
-                    await exec.exec('wget', [url])
+                    await exec.exec('wget', ['-P ./content/instagram', url])
                 }
             }
       - uses: stefanzweifel/git-auto-commit-action@v4
