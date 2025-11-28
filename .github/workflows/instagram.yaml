@@ -34,7 +34,6 @@ jobs:
             }
             
             async function getStory(id) {
-                const exec = require('@actions/exec');
                 const story_url = `https://graph.instagram.com/${id}?fields=media_url&access_token=${{ secrets.IG_TOKEN }}`
                 const response = await fetch(story_url);
                 console.log(response.status)
