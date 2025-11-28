@@ -40,12 +40,12 @@ jobs:
                 const data = await response.json();
 
                 if (data.hasOwnProperty('media_url')) {
-                    const url = await data['media_url'];
-                    var name = url.split('/');
-                    name = name[name.length - 1].split('?')[0];
-                    const trimedName = name.trim().replace(/\s/g, '');
-                    console.log('Story: ' + trimedName);
-                    await exec.exec('curl', [`-o content/instagram/${trimedName}`, url]);
+                  const url = await data['media_url'];
+                  var name = url.split('/')
+                  name = name[name.length - 1].split('?')[0]
+                  const trimName = name.replace(/\\s+/g, '')
+                  console.log('Story: ' + trimName)
+                  await exec.exec('wget', [`-P /content/instagram${trimName}`, url])
                 }
             }
       - uses: stefanzweifel/git-auto-commit-action@v4
