@@ -29,7 +29,7 @@ jobs:
                 if (stories.length > 0) {
                     for (const story of stories) {
                         const json = await story;
-                        getStory(story['id'])
+                        getStory(story['id']);
                     }
                 }
             }
@@ -41,10 +41,11 @@ jobs:
 
                 if (data.hasOwnProperty('media_url')) {
                     const url = await data['media_url'];
-                    var name = url.split('/')
-                    name = name[name.length - 1].split('?')[0]
-                    console.log('Story: ' + name)
-                    await exec.exec('curl', [`-o content/instagram/${name}`, url])
+                    var name = url.split('/');
+                    name = name[name.length - 1].split('?')[0];
+                    const trimedName = name.trim().replace(/\s/g, '');
+                    console.log('Story: ' + trimedName);
+                    await exec.exec('curl', [`-o content/instagram/${trimedName}`, url]);
                 }
             }
       - uses: stefanzweifel/git-auto-commit-action@v4
