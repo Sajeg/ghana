@@ -6,8 +6,8 @@ on:
     - cron: "0 */12 * * *"
 
 jobs:
-  check_for_stories:
-    name: Check for stories
+  get_stories:
+    name: Get stories from Instagram
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Install curl
         run: sudo apt-get update && sudo apt-get install -y curl
-      - name: Get Instagram stories
+      - name: Download Instagram stories
         uses: actions/github-script@v8
         with:
           script: |
@@ -48,11 +48,11 @@ jobs:
                   await exec.exec('curl', ['-f','-L','-g','-o',`content/instagram/${trimName}`, url])
                 }
             }
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v7
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          commit_message: Update generated README
+          commit_message: Saved new stories
           branch: main
           commit_user_name: insta-stalker 🤖
           commit_user_email: actions@github.com
