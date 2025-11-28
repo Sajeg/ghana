@@ -1,0 +1,57 @@
+name: Publish Instagram Stories
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */12 * * *"
+      
+    
+jobs:
+  check_for_stories:
+    name: Check for stories
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Install wget
+        run: sudo apt-get update && sudo apt-get install -y wget
+      - name: Get Instagram stories
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const response = await fetch('https://graph.instagram.com/17841478714461116/stories?access_token=${{ secrets.IG_TOKEN }}');
+            const data = await response.json();
+            
+            if (data.hasOwnProperty('data')) {
+                const stories = data['data'];
+                console.log(`Found ${stories.length} stories`);
+                if (stories.length > 0) {
+                    for (const story of stories) {
+                        const json = await story;
+                        getStory(story['id'])
+                    }
+                }
+            }
+            
+            async function getStory(id) {
+                const exec = require('@actions/exec');
+                const story_url = `https://graph.instagram.com/${id}?fields=media_url&access_token=${{ secrets.IG_TOKEN }}`
+                const response = await fetch(story_url);
+                console.log(response.status)
+                const data = await response.json();
+                
+                if (data.hasOwnProperty('media_url')) {
+                    const url = await data['media_url'];
+                    console.log(`[${id}] ${url}`);
+                    await exec.exec('wget', [url])
+                }
+            }
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          commit_message: Update generated README
+          branch: main
+          commit_user_name: insta-stalker 🤖
+          commit_user_email: actions@github.com
+          commit_author: insta-stalker 🤖 <actions@github.com>
