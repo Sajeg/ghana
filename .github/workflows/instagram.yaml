@@ -56,7 +56,6 @@ jobs:
                         const timeContent  = `\n #### {{< display_date "${time}" >}} \n`
                         fs.appendFileSync('content/instagram/index.md', timeContent)
                       }
-                      fs.appendFileSync('content/instagram/index.md', timeContent)
                       if (fileContent.includes(trimName.substring(0, trimName.length - 4))) {
                         console.log("Story already in the file")
                         return
