@@ -3,7 +3,7 @@ name: Publish Instagram Stories
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 */3 * * *"
 
 jobs:
   get_stories:
