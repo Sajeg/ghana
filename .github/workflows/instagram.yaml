@@ -51,7 +51,8 @@ jobs:
                     try {
                       const fileContent = fs.readFileSync('content/instagram/index.md', 'utf8');
                       if (fileContent.includes(time.split('T')[0])) {
-                        content = `#### {{< display_date "${time}" >}}`
+                        const timeContent  = `\n #### {{< display_date "${time}" >}}`
+                        fs.appendFileSync('content/instagram/index.md', timeContent)
                       }
                       if (fileContent.includes(trimName.substring(0, trimName.length - 4))) {
                         console.log("Story already in the file")
@@ -61,9 +62,9 @@ jobs:
                       console.error('Error reading file:', err);
                     }
                     if (trimName.endsWith(".webp")) {
-                      content += `"{{< display_time "${time}" >}} \n ![](${trimName} "")"`;
+                      content = `{{< display_time "${time}" >}} \n ![](${trimName} "")`;
                     } else {
-                      content += `"{{< display_time  "${time}" >}} \n {{< video src="${trimName.substring(0, trimName.length - 4)}" autoplay="false" controls="true" loop="true" >}}"`;
+                      content = `{{< display_time  "${time}" >}} \n {{< video src="${trimName.substring(0, trimName.length - 4)}" autoplay="false" controls="true" loop="true" >}}`;
                     }
                     fs.appendFileSync('content/instagram/index.md', content);
                 }
