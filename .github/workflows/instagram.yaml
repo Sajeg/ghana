@@ -20,7 +20,7 @@ jobs:
         uses: actions/github-script@v8
         with:
           script: |
-            const response = await fetch('https://graph.instagram.com/17841478714461116/stories?access_token=${{ secrets.IG_TOKEN }}');
+            const response = await fetch('https://graph.instagram.com/17841473933794435/stories?access_token=${{ secrets.IG_TOKEN }}');
             const data = await response.json();
 
             if (data.hasOwnProperty('data')) {
@@ -69,7 +69,7 @@ jobs:
             }
       - uses: stefanzweifel/git-auto-commit-action@v7
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
         with:
           commit_message: Saved new stories
           branch: main
