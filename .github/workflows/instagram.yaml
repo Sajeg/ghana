@@ -43,6 +43,7 @@ jobs:
                 if (data.hasOwnProperty('media_url')) {
                     const url = await data['media_url'].trim();
                     const time = await data['timestamp']
+                    const date = time.split('T')[0]
                     var name = url.split('/')
                     const trimName = name[name.length - 1].split('?')[0].replace(/\\s+/g, '')
                     console.log('Story: ' + trimName);
@@ -50,10 +51,13 @@ jobs:
                     var content = ""
                     try {
                       const fileContent = fs.readFileSync('content/instagram/index.md', 'utf8');
-                      if (fileContent.includes(time.split('T')[0])) {
-                        const timeContent  = `\n #### {{< display_date "${time}" >}}`
-                        fs.appendFileSync('content/instagram/index.md', timeContent)
+                      const timeContent  = `\n #### {{< display_date "${time}" >}} \n`
+                      if (fileContent.includes(date)) {
+                        const pattern = new RegExp("#### {{< display_date \"" + date + "T.*\" >}}")
+                        const newFileContent = fileContent.replace(pattern, "")
+                        fs.writeFileSync('content/instagram/index.md', newFileContent)
                       }
+                      fs.appendFileSync('content/instagram/index.md', timeContent)
                       if (fileContent.includes(trimName.substring(0, trimName.length - 4))) {
                         console.log("Story already in the file")
                         return
