@@ -46,11 +46,25 @@ jobs:
                     const trimName = name[name.length - 1].split('?')[0].replace(/\\s+/g, '')
                     console.log('Story: ' + trimName);
                     await exec.exec('curl', ['-f', '-L', '-g', '-o', `content/instagram/${trimName}`, url])
-                    if (trimName.endsWith(".webp")) {
-                      await exec.exec('echo', [`"{{< display_time \"${time}\" >}} ![](${trimName} \"\")"`, '>>', 'content/instagram/index.md'])
-                    } else {
-                      await exec.exec('echo', [`"{{< display_time  \"${time}\" >}} {{< video src=\"${trimName.substring(0, trimName.length - 4)}\" autoplay="false" controls="true" loop="true" >}}"`, '>>', 'content/instagram/index.md'])
+                    var content = ""
+                    try {
+                      const fileContent = fs.readFileSync('content/instagram/index.md', 'utf8');
+                      if (fileContent.includes(time.split('T')[0])) {
+                        content = `#### {{< display_date "${time}" >}}`
+                      }
+                      if (fileContent.includes(trimName.substring(0, trimName.length - 4))) {
+                        console.log("Story already in the file")
+                        return
+                      }
+                    } catch (err) {
+                      console.error('Error reading file:', err);
                     }
+                    if (trimName.endsWith(".webp")) {
+                      content += `"{{< display_time "${time}" >}} \n ![](${trimName} "")"`;
+                    } else {
+                      content += `"{{< display_time  "${time}" >}} \n {{< video src="${trimName.substring(0, trimName.length - 4)}" autoplay="false" controls="true" loop="true" >}}"`;
+                    }
+                    fs.appendFileSync('content/instagram/index.md', content);
                 }
             }
       - uses: stefanzweifel/git-auto-commit-action@v7
