@@ -51,8 +51,9 @@ jobs:
                     var content = ""
                     try {
                       const fileContent = fs.readFileSync('content/instagram/index.md', 'utf8');
-                      const timeContent  = `\n #### {{< display_date "${time}" >}} \n`
+                      console.log(date)
                       if (!fileContent.includes(date)) {
+                        const timeContent  = `\n #### {{< display_date "${time}" >}} \n`
                         fs.appendFileSync('content/instagram/index.md', timeContent)
                       }
                       fs.appendFileSync('content/instagram/index.md', timeContent)
