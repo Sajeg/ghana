@@ -15,7 +15,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
       - name: Download Instagram stories
         uses: actions/github-script@v8
         with:
@@ -75,11 +75,9 @@ jobs:
                 }
             }
       - uses: stefanzweifel/git-auto-commit-action@v7
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
         with:
           commit_message: Saved new stories
           branch: main
-          commit_user_name: insta-stalker 🤖
+          commit_user_name: insta-stalker
           commit_user_email: actions@github.com
-          commit_author: insta-stalker 🤖 <actions@github.com>
+          commit_author: insta-stalker <actions@github.com>
