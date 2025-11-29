@@ -52,11 +52,8 @@ jobs:
                     try {
                       const fileContent = fs.readFileSync('content/instagram/index.md', 'utf8');
                       const timeContent  = `\n #### {{< display_date "${time}" >}} \n`
-                      if (fileContent.includes(date)) {
-                        console.log("It includes the date. Removing it...");
-                        const pattern = new RegExp("#### {{< display_date \"" + date + "T.*\" >}}")
-                        const newFileContent = fileContent.replace(pattern, "")
-                        fs.writeFileSync('content/instagram/index.md', newFileContent)
+                      if (!fileContent.includes(date)) {
+                        fs.appendFileSync('content/instagram/index.md', timeContent)
                       }
                       fs.appendFileSync('content/instagram/index.md', timeContent)
                       if (fileContent.includes(trimName.substring(0, trimName.length - 4))) {
