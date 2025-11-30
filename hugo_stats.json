@@ -36,7 +36,8 @@
       "style",
       "svg",
       "title",
-      "ul"
+      "ul",
+      "video"
     ],
     "classes": [
       "bio",
@@ -75,6 +76,7 @@
       "pagination",
       "post",
       "post-content",
+      "post-content__read-more",
       "post-header",
       "post-heading__anchor",
       "post-meta",
@@ -86,8 +88,15 @@
     ],
     "ids": [
       "ghanastisch---der-blog-von-charlotte-und-johann",
-      "hahahugoshortcode14s0hbhb",
-      "hahahugoshortcode8s0hbhb",
+      "hahahugoshortcode15s0hbhb",
+      "hahahugoshortcode15s13hbhb",
+      "hahahugoshortcode15s3hbhb",
+      "hahahugoshortcode16s0hbhb",
+      "hahahugoshortcode16s13hbhb",
+      "hahahugoshortcode16s3hbhb",
+      "hahahugoshortcode9s0hbhb",
+      "hahahugoshortcode9s13hbhb",
+      "hahahugoshortcode9s3hbhb",
       "menu",
       "prism-dark",
       "prism-light",

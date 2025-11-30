@@ -64,9 +64,9 @@ jobs:
                       console.error('Error reading file:', err);
                     }
                     if (trimName.endsWith(".webp")) {
-                      content = `{{< display_time "${time}" >}} \n ![](${trimName} "")`;
+                      content = `\n{{< display_time "${time}" >}} \n ![](${trimName} "")`;
                     } else {
-                      content = `{{< display_time  "${time}" >}} \n {{< video src="${trimName.substring(0, trimName.length - 4)}" autoplay="false" controls="true" loop="true" >}}`;
+                      content = `\n{{< display_time  "${time}" >}} \n {{< video src="${trimName.substring(0, trimName.length - 4)}" autoplay="false" controls="true" loop="false" >}}`;
                     }
                     fs.appendFileSync('content/instagram/index.md', content);
                 }
