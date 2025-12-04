@@ -54,7 +54,7 @@ jobs:
                     var name = url.split('/')
                     const trimName = name[name.length - 1].split('?')[0].replace(/\\s+/g, '')
                     console.log('Story: ' + trimName);
-                    await exec.exec('curl', ['-f', '-L', '-g', '-o', '--create-dirs', `content/instagram/${month}/${trimName}`, url])
+                    await exec.exec('curl', ['-f', '-L', '-g', '-o', `content/instagram/${month}/${trimName}`, '--create-dirs', url])
                     var content = ""
                     const dateInFile = `\n#### {{< display_date "${date}T00:00:00+0000" >}}\n`
                     const fileHeader = `---\ndraft: false\ntitle: ${months[month - 1]}\n---\n`
