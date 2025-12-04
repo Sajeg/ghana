@@ -22,9 +22,9 @@ jobs:
           script: |
             const fs = require('fs')
             const months = [
-                'January', 'February', 'March', 'April', 'May',
-                'June', 'July', 'August', 'September',
-                'October', 'November', 'December'
+                'Januar', 'Februar', 'März', 'April', 'Mai',
+                'Juni', 'July', 'August', 'September',
+                'Oktober', 'November', 'Dezember'
             ];
             const response = await fetch('https://graph.instagram.com/17841473933794435/stories?access_token=${{ secrets.IG_TOKEN }}');
             const data = await response.json();
@@ -89,7 +89,7 @@ jobs:
 
             async function addMonth(month) {
               const fileHeader = `---\ndraft: false\ntitle: Instagram Story Archiv\n---\n`
-              const content = `[${months[month-1]}]({{< ref "instagram/${month}/index.md" >}})\n`
+              const content = `## [${months[month-1]}](${month} "${months[month-1]}")\n`
               const fileContent = fs.readFileSync(`content/instagram/index.md`, 'utf8');
               const stripedFileContent = fileContent.replace(fileHeader, "").trimStart()
               await fs.mkdirSync(`content/instagram/${month}/`, { recursive: true });
