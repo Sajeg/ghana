@@ -49,26 +49,23 @@ jobs:
                     console.log('Story: ' + trimName);
                     await exec.exec('curl', ['-f', '-L', '-g', '-o', `content/instagram/${trimName}`, url])
                     var content = ""
-                    try {
-                      const fileContent = fs.readFileSync('content/instagram/index.md', 'utf8');
-                      console.log(date)
-                      if (!fileContent.includes(date)) {
-                        const timeContent  = `\n #### {{< display_date "${time}" >}} \n`
-                        fs.appendFileSync('content/instagram/index.md', timeContent)
-                      }
-                      if (fileContent.includes(trimName.substring(0, trimName.length - 4))) {
+                    const dateInFile = `\n#### {{< display_date "${date}T00:00:00+0000" >}}\n`
+                    const fileContent = fs.readFileSync('content/instagram/index.md', 'utf8');
+                    var stripedFileContent = fileContent.replace("---\ndraft: false\ntitle: Instagram Story Archiv\n---\n", "").trimStart()
+                    if (stripedFileContent.includes(date)) {
+                         console.log("Date present")
+                         stripedFileContent = stripedFileContent.replace(`#### {{< display_date "${date}T00:00:00+0000" >}}`, "").trimStart()
+                    }
+                    if (fileContent.includes(trimName.substring(0, trimName.length - 4))) {
                         console.log("Story already in the file")
                         return
-                      }
-                    } catch (err) {
-                      console.error('Error reading file:', err);
                     }
                     if (trimName.endsWith(".webp")) {
-                      content = `\n{{< display_time "${time}" >}} \n ![](${trimName} "")`;
+                        content = `{{< display_time "${time}" >}} \n ![](${trimName} "")\n`;
                     } else {
-                      content = `\n{{< display_time  "${time}" >}} \n {{< video src="${trimName.substring(0, trimName.length - 4)}" autoplay="false" controls="true" loop="false" >}}`;
+                        content = `{{< display_time  "${time}" >}} \n {{< video src="${trimName.substring(0, trimName.length - 4)}" autoplay="false" controls="true" loop="true" >}}\n`;
                     }
-                    fs.appendFileSync('content/instagram/index.md', content);
+                    fs.writeFileSync('content/instagram/index.md', `---\ndraft: false\ntitle: Instagram Story Archiv\n---\n ${dateInFile} ${content} ${stripedFileContent}`);
                 }
             }
       - uses: stefanzweifel/git-auto-commit-action@v7
