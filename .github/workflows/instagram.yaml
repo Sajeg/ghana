@@ -50,16 +50,17 @@ jobs:
                     const time = await data['timestamp']
                     const date = time.split('T')[0]
                     const month = date.substring(5,7)
+                    const year = date.substring(0,4)
 
                     var name = url.split('/')
                     const trimName = name[name.length - 1].split('?')[0].replace(/\\s+/g, '')
                     console.log('Story: ' + trimName);
-                    await exec.exec('curl', ['-f', '-L', '-g', '-o', `content/instagram/${month}/${trimName}`, '--create-dirs', url])
+                    await exec.exec('curl', ['-f', '-L', '-g', '-o', `content/instagram/${year}${month}/${trimName}`, '--create-dirs', url])
                     var content = ""
                     const dateInFile = `\n#### {{< display_date "${date}T00:00:00+0000" >}}\n`
-                    const fileHeader = `---\ndraft: false\ntitle: ${months[month - 1]}\nsummary: " "\n---\n`
+                    const fileHeader = `---\ndraft: false\ntitle: ${months[month - 1]} ${year}\nsummary: " "\n---\n`
                     try {
-                        const fileContent = fs.readFileSync(`content/instagram/${month}/index.md`, 'utf8');
+                        const fileContent = fs.readFileSync(`content/instagram/${year}${month}/index.md`, 'utf8');
                         var stripedFileContent = fileContent.replace(fileHeader, "").trimStart()
                         if (stripedFileContent.includes(date)) {
                             console.log("Date present")
@@ -73,7 +74,7 @@ jobs:
                         if (e.code === 'ENOENT') {
                             console.log("Creating Folder...")
                             var stripedFileContent = ""
-                            await fs.mkdirSync(`content/instagram/${month}/`, { recursive: true });
+                            await fs.mkdirSync(`content/instagram/${year}${month}/`, { recursive: true });
                             console.log("Created Folde");
                         }
                     }
@@ -84,7 +85,7 @@ jobs:
                         content = `{{< display_time  "${time}" >}} \n {{< video src="${trimName.substring(0, trimName.length - 4)}" autoplay="false" controls="true" loop="true" >}}\n`;
                     }
                     console.log("Writing File...")
-                    fs.writeFileSync(`content/instagram/${month}/index.md`, `${fileHeader} ${dateInFile} ${content} ${stripedFileContent}`);
+                    fs.writeFileSync(`content/instagram/${year}${month}/index.md`, `${fileHeader} ${dateInFile} ${content} ${stripedFileContent}`);
                 }
             }
       - uses: stefanzweifel/git-auto-commit-action@v7
