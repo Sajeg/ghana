@@ -1,6 +1,6 @@
 ---
 draft: false
-title: November
+title: November 2025
 summary: " " 
 ---
 
