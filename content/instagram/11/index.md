@@ -1,6 +1,7 @@
 ---
 draft: false
 title: November
+summary: " " 
 ---
 
 #### {{< display_date "2025-11-30T10:15:35+0000" >}} 

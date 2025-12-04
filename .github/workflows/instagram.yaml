@@ -57,7 +57,7 @@ jobs:
                     await exec.exec('curl', ['-f', '-L', '-g', '-o', `content/instagram/${month}/${trimName}`, '--create-dirs', url])
                     var content = ""
                     const dateInFile = `\n#### {{< display_date "${date}T00:00:00+0000" >}}\n`
-                    const fileHeader = `---\ndraft: false\ntitle: ${months[month - 1]}\n---\n`
+                    const fileHeader = `---\ndraft: false\ntitle: ${months[month - 1]}\nsummary: " "\n---\n`
                     try {
                         const fileContent = fs.readFileSync(`content/instagram/${month}/index.md`, 'utf8');
                         var stripedFileContent = fileContent.replace(fileHeader, "").trimStart()
@@ -73,7 +73,8 @@ jobs:
                         if (e.code === 'ENOENT') {
                             console.log("Creating Folder...")
                             var stripedFileContent = ""
-                            await addMonth(month)
+                            await fs.mkdirSync(`content/instagram/${month}/`, { recursive: true });
+                            console.log("Created Folde");
                         }
                     }
 
@@ -85,16 +86,6 @@ jobs:
                     console.log("Writing File...")
                     fs.writeFileSync(`content/instagram/${month}/index.md`, `${fileHeader} ${dateInFile} ${content} ${stripedFileContent}`);
                 }
-            }
-
-            async function addMonth(month) {
-              const fileHeader = `---\ndraft: false\ntitle: Instagram Story Archiv\n---\n`
-              const content = `## [${months[month-1]}](${month} "${months[month-1]}")\n`
-              const fileContent = fs.readFileSync(`content/instagram/index.md`, 'utf8');
-              const stripedFileContent = fileContent.replace(fileHeader, "").trimStart()
-              await fs.mkdirSync(`content/instagram/${month}/`, { recursive: true });
-              fs.writeFileSync('content/instagram/index.md', `${fileHeader} ${content} ${stripedFileContent}`);
-              console.log("Created Folder")
             }
       - uses: stefanzweifel/git-auto-commit-action@v7
         with:
