@@ -21,6 +21,11 @@ jobs:
         with:
           script: |
             const fs = require('fs')
+            const months = [
+                'January', 'February', 'March', 'April', 'May',
+                'June', 'July', 'August', 'September',
+                'October', 'November', 'December'
+            ];
             const response = await fetch('https://graph.instagram.com/17841473933794435/stories?access_token=${{ secrets.IG_TOKEN }}');
             const data = await response.json();
 
@@ -44,29 +49,52 @@ jobs:
                     const url = await data['media_url'].trim();
                     const time = await data['timestamp']
                     const date = time.split('T')[0]
+                    const month = date.substring(5,7)
+
                     var name = url.split('/')
                     const trimName = name[name.length - 1].split('?')[0].replace(/\\s+/g, '')
                     console.log('Story: ' + trimName);
-                    await exec.exec('curl', ['-f', '-L', '-g', '-o', `content/instagram/${trimName}`, url])
+                    await exec.exec('curl', ['-f', '-L', '-g', '-o', `content/instagram/${month}/${trimName}`, url])
                     var content = ""
                     const dateInFile = `\n#### {{< display_date "${date}T00:00:00+0000" >}}\n`
-                    const fileContent = fs.readFileSync('content/instagram/index.md', 'utf8');
-                    var stripedFileContent = fileContent.replace("---\ndraft: false\ntitle: Instagram Story Archiv\n---\n", "").trimStart()
-                    if (stripedFileContent.includes(date)) {
-                         console.log("Date present")
-                         stripedFileContent = stripedFileContent.replace(`#### {{< display_date "${date}T00:00:00+0000" >}}`, "").trimStart()
+                    const fileHeader = `---\ndraft: false\ntitle: ${months[month - 1]}\n---\n`
+                    try {
+                        const fileContent = fs.readFileSync(`content/instagram/${month}/index.md`, 'utf8');
+                        var stripedFileContent = fileContent.replace(fileHeader, "").trimStart()
+                        if (stripedFileContent.includes(date)) {
+                            console.log("Date present")
+                             stripedFileContent = stripedFileContent.replace(`#### {{< display_date "${date}T00:00:00+0000" >}}`, "").trimStart()
+                        }
+                        if (fileContent.includes(trimName.substring(0, trimName.length - 4))) {
+                            console.log("Story already in the file")
+                            return
+                        }
+                    } catch (e) {
+                        if (e.code === 'ENOENT') {
+                            console.log("Creating Folder...")
+                            var stripedFileContent = ""
+                            await addMonth(month)
+                        }
                     }
-                    if (fileContent.includes(trimName.substring(0, trimName.length - 4))) {
-                        console.log("Story already in the file")
-                        return
-                    }
+
                     if (trimName.endsWith(".webp")) {
                         content = `{{< display_time "${time}" >}} \n ![](${trimName} "")\n`;
                     } else {
                         content = `{{< display_time  "${time}" >}} \n {{< video src="${trimName.substring(0, trimName.length - 4)}" autoplay="false" controls="true" loop="true" >}}\n`;
                     }
-                    fs.writeFileSync('content/instagram/index.md', `---\ndraft: false\ntitle: Instagram Story Archiv\n---\n ${dateInFile} ${content} ${stripedFileContent}`);
+                    console.log("Writing File...")
+                    fs.writeFileSync(`content/instagram/${month}/index.md`, `${fileHeader} ${dateInFile} ${content} ${stripedFileContent}`);
                 }
+            }
+
+            async function addMonth(month) {
+              const fileHeader = `---\ndraft: false\ntitle: Instagram Story Archiv\n---\n`
+              const content = `[${months[month-1]}]({{< ref "instagram/${month}/index.md" >}})\n`
+              const fileContent = fs.readFileSync(`content/instagram/index.md`, 'utf8');
+              const stripedFileContent = fileContent.replace(fileHeader, "").trimStart()
+              await fs.mkdirSync(`content/instagram/${month}/`, { recursive: true });
+              fs.writeFileSync('content/instagram/index.md', `${fileHeader} ${content} ${stripedFileContent}`);
+              console.log("Created Folder")
             }
       - uses: stefanzweifel/git-auto-commit-action@v7
         with:
