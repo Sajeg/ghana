@@ -1,7 +1,7 @@
 ---
 draft: false
 title: November 2025
-summary: " " 
+summary: "Hier findest du die Stories vom November" 
 ---
 
 #### {{< display_date "2025-11-30T10:15:35+0000" >}} 

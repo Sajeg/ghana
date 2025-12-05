@@ -58,7 +58,7 @@ jobs:
                     await exec.exec('curl', ['-f', '-L', '-g', '-o', `content/instagram/${year}${month}/${trimName}`, '--create-dirs', url])
                     var content = ""
                     const dateInFile = `\n#### {{< display_date "${date}T00:00:00+0000" >}}\n`
-                    const fileHeader = `---\ndraft: false\ntitle: ${months[month - 1]} ${year}\nsummary: " "\n---\n`
+                    const fileHeader = `---\ndraft: false\ntitle: ${months[month - 1]} ${year}\nsummary: "Hier findest du die Stories vom ${months[month - 1]}"\n---\n`
                     try {
                         const fileContent = fs.readFileSync(`content/instagram/${year}${month}/index.md`, 'utf8');
                         var stripedFileContent = fileContent.replace(fileHeader, "").trimStart()
