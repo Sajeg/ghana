@@ -5,6 +5,8 @@ summary: "Hier findest du die Stories vom Dezember"
 ---
  
 #### {{< display_date "2025-12-11T00:00:00+0000" >}}
+ {{< display_time  "2025-12-11T19:45:34+0000" >}} 
+ {{< video src="588229793_17873681100464460_3917661395042937764_n" autoplay="false" controls="true" loop="true" >}}
  {{< display_time  "2025-12-11T08:14:04+0000" >}} 
  {{< video src="AQMmkgXCS55kk1spGcweJArcWkgDaL4Z9Bo339e_03hNVyVJXbCULePd5BScEEkHaH9QGpRnahiXYuVViDhpq-ZuGXIdGJGsLRufIRI" autoplay="false" controls="true" loop="true" >}}
  #### {{< display_date "2025-12-10T00:00:00+0000" >}}
