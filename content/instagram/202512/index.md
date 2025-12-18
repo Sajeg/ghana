@@ -6,17 +6,17 @@ summary: "Hier findest du die Stories vom Dezember"
  
 #### {{< display_date "2025-12-17T00:00:00+0000" >}}
  {{< display_time  "2025-12-17T17:31:46+0000" >}} 
- {{< video src="588450861_17874341769464460_1274971591624970201_n" autoplay="false" controls="true" loop="true" >}}
+ ![](588450861_17874341769464460_1274971591624970201_n.jpg "")
  {{< display_time  "2025-12-17T17:34:26+0000" >}} 
- {{< video src="600254765_17874342168464460_7268054568343428435_n" autoplay="false" controls="true" loop="true" >}}
+ ![](600254765_17874342168464460_7268054568343428435_n.jpg "")
  #### {{< display_date "2025-12-16T00:00:00+0000" >}}
  {{< display_time  "2025-12-16T19:38:41+0000" >}} 
- {{< video src="586711744_17874237858464460_6590734485053395418_n" autoplay="false" controls="true" loop="true" >}}
+ ![](586711744_17874237858464460_6590734485053395418_n.jpg "")
  {{< display_time  "2025-12-16T19:40:27+0000" >}} 
- {{< video src="589644084_17874237972464460_2174779900818695538_n" autoplay="false" controls="true" loop="true" >}}
+ ![](589644084_17874237972464460_2174779900818695538_n.jpg "")
  #### {{< display_date "2025-12-11T00:00:00+0000" >}}
  {{< display_time  "2025-12-11T19:45:34+0000" >}} 
- {{< video src="588229793_17873681100464460_3917661395042937764_n" autoplay="false" controls="true" loop="true" >}}
+ ![](588229793_17873681100464460_3917661395042937764_n.jpg "")
  {{< display_time  "2025-12-11T08:14:04+0000" >}} 
  {{< video src="AQMmkgXCS55kk1spGcweJArcWkgDaL4Z9Bo339e_03hNVyVJXbCULePd5BScEEkHaH9QGpRnahiXYuVViDhpq-ZuGXIdGJGsLRufIRI" autoplay="false" controls="true" loop="true" >}}
  #### {{< display_date "2025-12-10T00:00:00+0000" >}}
