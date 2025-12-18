@@ -78,11 +78,10 @@ jobs:
                             console.log("Created Folde");
                         }
                     }
-
-                    if (trimName.endsWith(".webp")) {
-                        content = `{{< display_time "${time}" >}} \n ![](${trimName} "")\n`;
-                    } else {
+                    if (trimName.endsWith(".mp4")) {
                         content = `{{< display_time  "${time}" >}} \n {{< video src="${trimName.substring(0, trimName.length - 4)}" autoplay="false" controls="true" loop="true" >}}\n`;
+                    } else {
+                        content = `{{< display_time "${time}" >}} \n ![](${trimName} "")\n`
                     }
                     console.log("Writing File...")
                     fs.writeFileSync(`content/instagram/${year}${month}/index.md`, `${fileHeader} ${dateInFile} ${content} ${stripedFileContent}`);
