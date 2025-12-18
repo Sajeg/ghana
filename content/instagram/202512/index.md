@@ -4,7 +4,12 @@ title: Dezember 2025
 summary: "Hier findest du die Stories vom Dezember"
 ---
  
-#### {{< display_date "2025-12-17T00:00:00+0000" >}}
+#### {{< display_date "2025-12-18T00:00:00+0000" >}}
+ {{< display_time  "2025-12-18T21:00:27+0000" >}} 
+ {{< video src="AQNiRO8cd4lryVmi30mIw2CpMUYnWdwvuCIYhEk8FPcGT4Ss8q0CclzfODVAoFljUb4vqjPZ9vzpRbNMvg6Sl-vwFcO42km-EPb83Gs" autoplay="false" controls="true" loop="true" >}}
+ {{< display_time  "2025-12-18T21:02:11+0000" >}} 
+ {{< video src="AQMowWOqFS5Ks2E7iR9wDJhWA2rwvEcNYmOaogH4Pc0dsO7gMN2gvQ_i3pO3bZypkO4dYl5SDv4zuaa_sz7xWWJxNoW-cXWWvLPYujc" autoplay="false" controls="true" loop="true" >}}
+ #### {{< display_date "2025-12-17T00:00:00+0000" >}}
  {{< display_time  "2025-12-17T17:31:46+0000" >}} 
  ![](588450861_17874341769464460_1274971591624970201_n.jpg "")
  {{< display_time  "2025-12-17T17:34:26+0000" >}} 
