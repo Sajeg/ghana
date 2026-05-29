@@ -3,7 +3,7 @@ title: Update aus Ghana
 author: Charlotte
 draft: false
 date: 2026-05-29
-summary: Unser letzter Blogbeitrag ist nun schon eine Weile her. Das hat seinen guten Grund. Jetzt erfahrt ihr auch, warum.
+summary: Lange haben wir uns hier nicht mehr gemeldet. Das hat einen guten Grund. Ende letzten Jahres war im Rays of Hope Center viel im Umbruch.
 ---
 
 ![Johann und Charlotte](volo_haus.jpg "")
