@@ -3,6 +3,7 @@ title: Update aus Ghana
 author: Charlotte
 draft: false
 date: 2026-05-29
+summary: Unser letzter Blogbeitrag ist nun schon eine Weile her. Das hat seinen guten Grund. Jetzt erfahrt ihr auch, warum.
 ---
 
 ![Johann und Charlotte](volo_haus.jpg "")
