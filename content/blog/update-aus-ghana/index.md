@@ -1,5 +1,5 @@
 ---
-title: Up
+title: Update aus Ghana
 author: Charlotte
 draft: false
 date: 2026-05-29
