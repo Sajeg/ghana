@@ -4,7 +4,16 @@ title: Juni 2026
 summary: "Hier findest du die Stories vom Juni"
 ---
  
-#### {{< display_date "2026-06-05T00:00:00+0000" >}}
+#### {{< display_date "2026-06-08T00:00:00+0000" >}}
+ {{< display_time "2026-06-08T15:21:36+0000" >}} 
+ ![](719565699_17898053607464460_8879225352363651470_n.webp "")
+ {{< display_time  "2026-06-08T14:59:40+0000" >}} 
+ {{< video src="AQPpUliuGR0TjfEXi7xi0qYMhqoEVh7i0kBBmDws7KSq7KZx1VUHGVfPEy-P_Pt2AznTwgp6JcDmjj44kxu_cVwbHHxShpWzaxo7QE8" autoplay="false" controls="true" loop="true" >}}
+ {{< display_time "2026-06-08T14:57:37+0000" >}} 
+ ![](717637511_17898051003464460_4186878828999100424_n.jpg "")
+ {{< display_time "2026-06-08T14:55:51+0000" >}} 
+ ![](717582319_17898050505464460_3433828515720286859_n.jpg "")
+ #### {{< display_date "2026-06-05T00:00:00+0000" >}}
  {{< display_time "2026-06-05T17:23:25+0000" >}} 
  ![](714303817_17897630844464460_3859190622329767395_n.jpg "")
  {{< display_time "2026-06-05T13:55:13+0000" >}} 
