@@ -1,0 +1,22 @@
+---
+draft: false
+title: July 2026
+summary: "Hier findest du die Stories vom July"
+---
+ 
+#### {{< display_date "2026-07-01T00:00:00+0000" >}}
+ {{< display_time  "2026-07-01T20:25:19+0000" >}} 
+ {{< video src="AQPyYXpDm4JsTX-rHl5wmQxbQ42W7dySsDjwprpMbVGnUyN56pWmUDqqcHkDV1pJmEgRfwNQsKTEm4_IF0bRXDxttWesdkBFDtHVRgk" autoplay="false" controls="true" loop="true" >}}
+ {{< display_time "2026-07-01T20:24:54+0000" >}} 
+ ![](730313326_17901726081464460_4294352216906160942_n.jpg "")
+ {{< display_time "2026-07-01T20:21:24+0000" >}} 
+ ![](731541140_17901725724464460_6622898291547442302_n.jpg "")
+ {{< display_time "2026-07-01T20:14:44+0000" >}} 
+ ![](731423256_17901725016464460_2349144765934574990_n.jpg "")
+ {{< display_time "2026-07-01T20:16:05+0000" >}} 
+ ![](731423261_17901725277464460_8525705871428903879_n.jpg "")
+ {{< display_time "2026-07-01T20:26:44+0000" >}} 
+ ![](733642156_17901726285464460_1904588833478981631_n.jpg "")
+ {{< display_time "2026-07-01T20:16:35+0000" >}} 
+ ![](735543638_17901725304464460_7053279348042676331_n.jpg "")
+ 
