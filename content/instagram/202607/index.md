@@ -4,7 +4,12 @@ title: July 2026
 summary: "Hier findest du die Stories vom July"
 ---
  
-#### {{< display_date "2026-07-01T00:00:00+0000" >}}
+#### {{< display_date "2026-07-05T00:00:00+0000" >}}
+ {{< display_time "2026-07-05T18:44:44+0000" >}} 
+ ![](734171665_17902354644464460_2925987525493209734_n.jpg "")
+ {{< display_time "2026-07-05T18:44:11+0000" >}} 
+ ![](734008767_17902354587464460_4063827593357305554_n.jpg "")
+ #### {{< display_date "2026-07-01T00:00:00+0000" >}}
  {{< display_time  "2026-07-01T20:25:19+0000" >}} 
  {{< video src="AQPyYXpDm4JsTX-rHl5wmQxbQ42W7dySsDjwprpMbVGnUyN56pWmUDqqcHkDV1pJmEgRfwNQsKTEm4_IF0bRXDxttWesdkBFDtHVRgk" autoplay="false" controls="true" loop="true" >}}
  {{< display_time "2026-07-01T20:24:54+0000" >}} 
