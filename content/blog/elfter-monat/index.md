@@ -3,7 +3,7 @@ title: Juli in Ghana
 author: Charlotte
 draft: false
 date: 2026-08-07
-summary: Das Jahr ist leider schon fast vorüber. Hier zeigt Charlotte euch einen Einblick in unseren Alltag.
+summary: Das Jahr ist leider schon fast vorüber. Hier gibt Charlotte euch einen Einblick in unseren Alltag.
 ---
 
 ![](IMG_7050.jpg "Ein Blick auf die Gästehäuser von PCC")
